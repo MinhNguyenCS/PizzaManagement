@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <title>Login form</title>
+   </head>
+   <body>
+      <div class="login">
+         <img src="assets/img/pizza.png" alt="image" class="login_bg">
+
+         <form action="" class="login_form">
+            <h1 class = "store_title">AKATSUKI PIZZA</h1>
+            <h1 class="login_title">Login</h1>
+            <div class="login_inputs">
+               <div class="login_box">
+                  <input placeholder="User ID" required class="login_input" id="user_id">
+                  <i class="fa-solid fa-user"></i>
+               </div>
+               <!-- <div class="login_box">
+                  <input type="password" placeholder="Password" required class="login_input">
+                  <i class="ri-lock-2-fill"></i>
+               </div> -->
+            </div>
+
+            <div class = "login_as">
+               Login As 
+            </div>
+             <div class = "button_container">
+               <button type="button" class="login_button" id = "owner_button">Store Owner</button>
+               <button type="button" class="login_button" id = "chef_button">Chef</button>
+             </div>
+         </form>
+      </div>
+       <!-- Get user id -->
+      <script>document.getElementById('owner_button').addEventListener('click', function() {
+         const userId = document.getElementById('user_id').value;
+         localStorage.setItem('userId', userId);
+         window.location.href = 'owner.html';
+     });
+     
+     document.getElementById('chef_button').addEventListener('click', function() {
+         const userId = document.getElementById('user_id').value;
+         localStorage.setItem('userId', userId);
+         window.location.href = 'chef.html';
+     });
+      </script>
+   </body>
+</html>
