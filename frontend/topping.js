@@ -2,7 +2,7 @@
 $(document).ready(function () {
     // Fetch + display toppings
     $.ajax({
-        url: "http://54.183.203.254/pizza/api/topping",
+        url: "https://54.183.203.254/pizza/api/topping",
         method: "GET"
     }).done(function (result) {
         const listTopping = result.data;
@@ -53,7 +53,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: `http://54.183.203.254/pizza/api/topping/update`,
+            url: `https://54.183.203.254/pizza/api/topping/update`,
             method: "POST",
             data: { id: toppingId, name: newToppingName },
             success: function (response) {
@@ -110,7 +110,7 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: `http://54.183.203.254/pizza/api/topping/delete/${toppingId}`,
+                    url: `https://54.183.203.254/pizza/api/topping/delete/${toppingId}`,
                     method: "POST",
                     success: function (response) {
                         Swal.fire("Deleted!", response.message, "success");
@@ -143,7 +143,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: "http://54.183.203.254/pizza/api/topping/adding",
+            url: "https://54.183.203.254/pizza/api/topping/adding",
             method: "POST",
             data: { name: toppingName },
             success: function (response) {
