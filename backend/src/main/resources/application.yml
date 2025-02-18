@@ -1,10 +1,5 @@
 server:
   port: 9111
-  ssl:
-    key-store: classpath:keystore.jks
-    key-store-password: password
-    key-alias: myapp
-    key-password: password
   servlet:
     context-path: /pizza/api
 
