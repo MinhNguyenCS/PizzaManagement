@@ -3,7 +3,7 @@
 $(document).ready(function () {
     // Fetch + display toppings
     $.ajax({
-        url: "http://54.183.203.254/pizza/api/topping",
+        url: "https://akatsukipizza.uk/pizza/api/topping",
         method: "GET"
     }).done(function (result) {
         const listTopping = result.data;
@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     // Fetch + display pizzas
     $.ajax({
-        url: "http://54.183.203.254/pizza/api/chef",
+        url: "https://akatsukipizza.uk/pizza/api/chef",
         method: "GET"
     }).done(function (result) {
         const listPizza = result.data;
@@ -54,7 +54,7 @@ $(document).ready(function () {
         $("#updatePizzaModal input[name='pizzaName']").val(pizzaName);
 
         $.ajax({
-            url: `http://54.183.203.254/pizza/api/chef/${pizzaId}`,
+            url: `https://akatsukipizza.uk/pizza/api/chef/${pizzaId}`,
             method: "GET"
         }).done(function (response) {
             if (response.success) {
@@ -62,7 +62,7 @@ $(document).ready(function () {
                 
                 // Toppings dropdown
                 $.ajax({
-                    url: `http://54.183.203.254/pizza/api/topping`,
+                    url: `https://akatsukipizza.uk/pizza/api/topping`,
                     method: "GET"
                 }).done(function (result) {
                     const listTopping = result.data;
@@ -130,7 +130,7 @@ $(document).ready(function () {
         const requestData = JSON.stringify({ name: newPizzaName, toppingIds });
         // Get pizza by id
         $.ajax({
-            url: `http://54.183.203.254/pizza/api/chef/update/${pizzaId}`,
+            url: `https://akatsukipizza.uk/pizza/api/chef/update/${pizzaId}`,
             method: "POST",
             contentType: "application/json",
             data: requestData
@@ -179,7 +179,7 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: `http://54.183.203.254/pizza/api/chef/delete/${pizzaId}`,
+                    url: `https://akatsukipizza.uk/pizza/api/chef/delete/${pizzaId}`,
                     method: "POST",
                     success: function (response) {
                         Swal.fire("Deleted!", response.message, "success");
@@ -224,7 +224,7 @@ $(document).ready(function () {
         });
 
         $.ajax({
-            url: "http://54.183.203.254/pizza/api/chef/adding",
+            url: "https://akatsukipizza.uk/pizza/api/chef/adding",
             method: "POST",
             contentType: "application/json",
             data: requestData,
