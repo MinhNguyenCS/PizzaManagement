@@ -1,0 +1,23 @@
+CREATE DATABASE PizzaStore;
+USE PizzaStore;
+
+-- Toppings Table
+CREATE TABLE Topping (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) UNIQUE NOT NULL
+);
+
+-- Pizzas Table
+CREATE TABLE Pizza (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) UNIQUE NOT NULL
+);
+
+-- Junction Table for Pizza and Toppings (Many-to-Many Relationship)
+CREATE TABLE Pizza_Topping (
+    pizza_id INT,
+    topping_id INT,
+    PRIMARY KEY (pizza_id, topping_id),
+    FOREIGN KEY (pizza_id) REFERENCES Pizza(id) ON DELETE CASCADE,
+    FOREIGN KEY (topping_id) REFERENCES Topping(id) ON DELETE CASCADE
+);

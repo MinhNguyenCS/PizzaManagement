@@ -109,5 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //display userId 
 document.addEventListener('DOMContentLoaded', function() {
     const userId = localStorage.getItem('userId');
-    document.getElementById('welcome_user').textContent = userId;
+    document.getElementById('welcome_user').textContent = userId ? userId : 'Guest';
 });
+
