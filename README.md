@@ -143,7 +143,4 @@ MIT License. See `LICENSE` file for details.
 🌍 Website: [pizzamanagement.com](https://minhnguyencs.github.io/PizzaManagement/frontend/login.html)
 
 
-Beta
-0 / 10
-used queries
-1
+
